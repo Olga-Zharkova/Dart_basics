@@ -13,6 +13,7 @@ class User{
 
 //получение указателя почты (значения после @)
 mixin GetMailSystem on User{
+  @override
   String getMailSystem() {
     if (!email.contains("@")){return throw ArgumentError();}
     return email.substring(email.indexOf("@") + 1);
@@ -20,26 +21,26 @@ mixin GetMailSystem on User{
 }
 
 class UserManager<T extends User>{
-  var listUser = <T>[];
-  var listEmail = <String> [];
+  var _listUser = <T>[];
+  var _listEmail = <String> [];
 
   //добавление пользователя
-  addUser(T user) => listUser.add(user);
+  addUser(T user) => _listUser.add(user);
 
   //удаление пользователя
-  deleteUser(T user) => listUser.remove(user);
+  deleteUser(T user) => _listUser.remove(user);
 
   //вывод списка добавленных пользователей
-  String toListUser() => listUser.toString();
+  String toListUser() => _listUser.toString();
 
   //напечатать адреса электронных почт
   List <String> printEmail(){
-    listEmail.clear();
-    for(var i in listUser){
-      i is AdminUser? listEmail.add(i.getMailSystem()):
-      listEmail.add(i.email);
+    _listEmail.clear();
+    for(var i in _listUser){
+      i is AdminUser? _listEmail.add(i.getMailSystem()):
+      _listEmail.add(i.email);
     }
-    return listEmail;
+    return _listEmail;
   }
 }
 

@@ -84,6 +84,7 @@ void main() {
   print('   ${listUser.toListUser()}');
   print('   ${listUser.printEmail()}');
 
+
   listUser.deleteUser(admin2);
   //print(listUser);
   print(' Список людей и адресов почт после удаления');
