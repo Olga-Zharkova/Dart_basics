@@ -1,11 +1,11 @@
-import 'firstLesson/4.dart';
-import 'firstLesson/5.dart';
-import 'firstLesson/1.dart';
-import 'firstLesson/2.dart';
-import 'firstLesson/3.dart';
-import 'firstLesson/6.dart';
-import 'firstLesson/7.dart';
-import 'firstLesson/8.dart';
+import '4.dart';
+import '5.dart';
+import '1.dart';
+import '2.dart';
+import '3.dart';
+import '6.dart';
+import '7.dart';
+import '8.dart';
 
 void main() {
   //первое задание
